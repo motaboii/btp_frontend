@@ -16,10 +16,10 @@ export default function LandingPage() {
             
                     <div style={ButtonContainerStyle}>
                     <h2 className="organization-heading">Insurance Organization</h2>
-                        <Link to="/organization/login">
+                        <Link to="/orglogin">
                             <button className="primary-button">Log In</button>
                         </Link>
-                        <Link to="/organization/register">
+                        <Link to="/orgregister">
                             <button className="primary-button" id="org_reg_btn"><span>Register</span></button>
                         </Link>
                     </div>
@@ -30,10 +30,10 @@ export default function LandingPage() {
                     
                     <div style={ButtonContainerStyle}>
                     <h2 className="individual-user-heading">Individual User</h2>
-                        <Link to="/individual/login">
+                        <Link to="/login">
                             <button className="primary-button">Log In</button>
                         </Link>
-                        <Link to="/individual/register">
+                        <Link to="/register">
                             <button className="primary-button" id="ind_reg_btn"><span>Register</span></button>
                         </Link>
                     </div>
@@ -64,7 +64,5 @@ const ButtonContainerStyle = {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',  // Box shadow for a subtle lift
     width: '50%',                // Full-width
     boxSizing: 'border-box',       // Include padding and border in the width calculation
-                  // Flex container
-     // Center horizontally
     alignItems: 'center', 
 }

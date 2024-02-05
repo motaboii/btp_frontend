@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './HomePage.css';
-import OrgNavbar from './UserNavbar';
+import OrgNavbar from './OrgNavbar';
 
 export default function HomePage() {
   return (
@@ -29,8 +29,8 @@ export default function HomePage() {
       </div>
 
       {/* Button for Dashboard */}
-      <Link to="/dashboard" style={{ textDecoration: 'none' }}>
-        <button className="primary-button" style={{ marginTop: '1.5rem' }}>Policies</button>
+      <Link to="/CreatePolicies" style={{ textDecoration: 'none' }}>
+        <button className="primary-button" style={{ marginTop: '1.5rem' }}>Create Polocies</button>
       </Link>
 
       <Link to="/">
