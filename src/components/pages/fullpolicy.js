@@ -1,8 +1,12 @@
 import React from 'react';
 import './fullpolicy.css';
+import UserNavbar from './OrgNavbar';
 
 const FullPolicy = () => {
   return (
+    <>
+   <UserNavbar/>
+
     <div className="full-policy-container">
       <div className="policy-image">
         {/* Replace the placeholder image with the actual image URL */}
@@ -22,6 +26,7 @@ const FullPolicy = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

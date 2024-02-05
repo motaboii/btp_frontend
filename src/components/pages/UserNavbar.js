@@ -11,7 +11,7 @@ const UserNavbar = () => {
           <Link to="/dashboard" className="nav-link">
             View Policies
           </Link>
-          <Link to="/dashboard" className="nav-link">
+          <Link to="/UserProfile" className="nav-link">
             User Profile
           </Link>
           <Link to="/dashboard" className="nav-link">

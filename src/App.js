@@ -14,6 +14,7 @@ import Orglogin from './components/pages/orglogin'
 import Orgregister from './components/pages/orgregister'
 import OrgNavbar from './components/pages/OrgNavbar'
 import Home2 from './components/pages/home2'
+import UserProfile from './components/pages/UserProfile'
 
 
 
@@ -36,6 +37,7 @@ export default function App() {
                     <Route path="/orgregister" element={ <Orgregister/> } />
                     <Route path="/OrgNavbar" element={ <OrgNavbar/> } />
                     <Route path="/home2" element={ <Home2/> } /> 
+                <Route path="/UserProfile" element={ <UserProfile/> } /> 
                     
                     
 

@@ -8,7 +8,7 @@ const UserNavbar = () => {
       <div className="navbar-container">
         <div className="logo">D APP</div>
         <div className="nav-links">
-          <Link to="/dashboard" className="nav-link">
+          <Link to="/CreatePolicies" className="nav-link">
             Create Policies
           </Link>
           <Link to="/CreatePolicies" className="nav-link">

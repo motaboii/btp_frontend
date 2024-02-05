@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './CreatePolicy.css';
+import OrgNavbar from './OrgNavbar';
 
 const CreatePolicy = () => {
   const [formData, setFormData] = useState({
-    organizationName: '',
+    companyName: '',
     policyName: '',
     policyId: '',
   });
+  const [submittedDataList, setSubmittedDataList] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,25 +22,32 @@ const CreatePolicy = () => {
     e.preventDefault();
     // Add your logic to handle form submission here
     console.log('Form data submitted:', formData);
+
+    // Create a copy of the submitted data list and add the new data
+    setSubmittedDataList([...submittedDataList, formData]);
+
     // Reset form fields after submission
     setFormData({
-      organizationName: '',
+      companyName: '',
       policyName: '',
       policyId: '',
     });
   };
 
   return (
+    <>
+
+<OrgNavbar/>
     <div className="create-policy-container">
       <h2>Create Policy</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="organizationName">Organization Name:</label>
+        <div className="form-group2">
+          <label htmlFor="companyName">Company Name:</label>
           <input
             type="text"
-            id="organizationName"
-            name="organizationName"
-            value={formData.organizationName}
+            id="companyName"
+            name="companyName"
+            value={formData.companyName}
             onChange={handleChange}
             required
           />
@@ -67,7 +76,17 @@ const CreatePolicy = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
+
+      {submittedDataList.map((submittedData, index) => (
+        <div key={index} className="submitted-card">
+          <h3>Created Policy {index + 1}</h3>
+          <p>Company Name: {submittedData.companyName}</p>
+          <p>Policy Name: {submittedData.policyName}</p>
+          <p>Policy ID: {submittedData.policyId}</p>
+        </div>
+      ))}
     </div>
+    </>
   );
 };
 
