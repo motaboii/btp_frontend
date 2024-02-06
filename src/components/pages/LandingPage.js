@@ -6,54 +6,34 @@ import Features from './features';
 import MainNavbar from './MainNavbar'
 import Footer from './Footer';
 import Gif from './Gif';
+import MiddleSection from './MiddleSection';
+import Meet from './Meet';
 
 export default function LandingPage() {
   return (
     <>
       <header style={HeaderStyle}>
+
       <MainNavbar/>
    
         <h1 className="main-title text-center">
           Blockchain-based Accident Data Storage <br />and Insurance Process Automation
         </h1>
-
-        {/* Insurance Organization Section */}
-        <div className="organization-section text-center">
-          <div style={ButtonContainerStyle}>
-            <h2 className="organization-heading">Insurance Organization</h2>
-            <Link to="/orglogin">
-              <button className="primary-button">Log In</button>
-            </Link>
-            <Link to="/orgregister">
-              <button className="primary-button" id="org_reg_btn">
-                <span>Register</span>
-              </button>
-            </Link>
-          </div>
-        </div>
-
-        {/* Individual User Section */}
-        <div className="individual-user-section text-center">
-         <div style={ButtonContainerStyle}>
-            <h2 className="individual-user-heading">Individual User</h2>
-            <Link to="/login">
-              <button className="primary-button">Log In</button>
-            </Link>
-            <Link to="/register">
-              <button className="primary-button" id="ind_reg_btn">
-                <span>Register</span>
-              </button>
-            </Link>
-          </div>
-        </div>
+        <br/>
+        <br/>
+<MiddleSection/>
+    
         
         <Features />
+        
         <br/>
         <br/>
         <Gif/>
         <br/>
-
+        <Meet/>
         <Footer/>
+        <br/>
+        <br/>
       </header>
     </>
   );
@@ -66,7 +46,7 @@ const HeaderStyle = {
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
   position: 'relative',
-   backgroundColor: 'antiquewhite'
+   backgroundColor: 'rgb(255, 255, 255)'
 };
 
 const TopRightButtonContainer = {

@@ -2,8 +2,9 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import MainNavbar from './MainNavbar'
 import "./RegisterPage.css";
+import Footer from "./Footer";
 export default function SignUpPage() {
   const url = "https://misty-ray-threads.cyclic.app/api/v1/auth/register";
   const [message, setMessage] = useState("");
@@ -39,6 +40,9 @@ export default function SignUpPage() {
   };
 
   return (
+    <>
+  <MainNavbar/>
+
     <div className="text-center m-5-auto">
       <h2>Join us</h2>
       <h5>Create your personal account</h5>
@@ -84,5 +88,7 @@ export default function SignUpPage() {
         </p>
       </footer>
     </div>
+    <Footer/>
+    </>
   );
 }

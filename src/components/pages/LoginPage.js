@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import MainNavbar from './MainNavbar'
 import "./LoginPage.css";
+import Footer from "./Footer";
 
 export default function SignInPage() {
   const url = "https://misty-ray-threads.cyclic.app/api/v1/auth/login";
@@ -28,6 +29,9 @@ export default function SignInPage() {
   };
 
   return (
+    <>
+      <MainNavbar/>
+   
     <div className="text-center m-5-auto">
       <h2>Sign in to us</h2>
       <form>
@@ -59,5 +63,7 @@ export default function SignInPage() {
         </p>
       </footer>
     </div>
+    <Footer/>
+    </>
   );
 }

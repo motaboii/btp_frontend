@@ -3,7 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import "./LoginPage.css";
-
+import MainNavbar from './MainNavbar'
+import Footer from "./Footer";
 export default function SignInPage() {
   const url = "https://misty-ray-threads.cyclic.app/api/v1/auth/login";
   const navigate = useNavigate();
@@ -28,6 +29,9 @@ export default function SignInPage() {
   };
 
   return (
+    <>
+   <MainNavbar/>
+
     <div className="text-center m-5-auto">
       <h2>Sign in to us</h2>
       <form>
@@ -45,7 +49,8 @@ export default function SignInPage() {
           <input id="Password" type="password" name="password" required />
         </p>
         <p>
-          <button onClick={(e) => login(e)} id="sub_btn">
+        <button onClick={(e) => login(e)} id="sub_btn" style={{ color: 'white' }}>
+
             Login
           </button>
         </p>
@@ -59,5 +64,8 @@ export default function SignInPage() {
         </p>
       </footer>
     </div>
+
+    <Footer/>
+    </>
   );
 }

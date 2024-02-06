@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [showRegisterDropdown, setShowRegisterDropdown] = useState(false);
@@ -57,17 +58,18 @@ const Navbar = () => {
     zIndex: 1,
     top: '40px',
   };
-
+  
   const dropdownItemStyle = {
     padding: '12px 16px',
     color: '#fff',
     textDecoration: 'none',
     cursor: 'pointer',
-    transition: 'background-color 0.3s ease-in-out',
-    display: 'block',
+    transition: 'color 0.3s ease-in-out', // Add transition for color change on hover
     borderBottom: '1px solid #777',
+    backgroundColor: '#555555',
   };
-
+  
+ 
   const handleRegisterDropdownToggle = () => {
     setShowRegisterDropdown(!showRegisterDropdown);
     // Close login dropdown if open
@@ -94,8 +96,9 @@ const Navbar = () => {
           </button>
           {showRegisterDropdown && (
             <div style={dropdownContentStyle}>
-              <div style={dropdownItemStyle}>Register as an Individual</div>
-              <div style={dropdownItemStyle}>Register as Organisation</div>
+
+            <Link to="/register"><button style={dropdownItemStyle}>Register as an Individual</button></Link>
+            <Link to="/orgregister"> <button style={dropdownItemStyle}>Register as Organisation</button></Link>
             </div>
           )}
         </div>
@@ -109,12 +112,27 @@ const Navbar = () => {
           </button>
           {showLoginDropdown && (
             <div style={dropdownContentStyle}>
-              <div style={dropdownItemStyle}>Login as an Individual</div>
-              <div style={dropdownItemStyle}>Login as Organisation</div>
+            <Link to="/login">   <button style={dropdownItemStyle}>Login as an Individual</button></Link>
+            <Link to="/orglogin">  <button style={dropdownItemStyle}>Login as Organisation</button></Link>
             </div>
           )}
         </div>
 
+
+
+
+        <div style={dropdownContainerStyle}>
+        <Link to="/">
+
+        
+          <button
+            style={buttonStyle}
+            onClick={handleLoginDropdownToggle}
+          >
+            Logout
+          </button>
+          </Link>
+</div>
         <div className="top-right-button-container">
           <button
             style={lightGreenButtonStyle}
