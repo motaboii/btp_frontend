@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './HomePage.css';
 import OrgNavbar from './OrgNavbar';
+import Footer from './Footer';
 
 export default function HomePage() {
   return (
@@ -30,13 +31,18 @@ export default function HomePage() {
 
       {/* Button for Dashboard */}
       <Link to="/CreatePolicies" style={{ textDecoration: 'none' }}>
-        <button className="primary-button" style={{ marginTop: '1.5rem' }}>Create Polocies</button>
+        <button className="primary-button" style={{ marginTop: '1.5rem' }}>Create </button>
       </Link>
 
       <Link to="/">
         <button className="primary-button">Log out</button>
       </Link>
     </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <Footer/>
     </>
   );
 }

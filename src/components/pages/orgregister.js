@@ -15,7 +15,8 @@ export default function SignUpPage() {
     navigate("/orglogin");
   };
 
-  const register = async () => {
+  const register = async (e) => {
+    e.preventDefault()
     let name = document.querySelector("#name").value;
     let email = document.querySelector("#Email").value;
     let password = document.querySelector("#Password").value;
@@ -73,7 +74,7 @@ export default function SignUpPage() {
           .
         </p>
         <p>
-          <button id="sub_btn" onClick={register}>
+          <button id="sub_btn" onClick={(e)=>{register(e)}}>
             Register
           </button>
         </p>

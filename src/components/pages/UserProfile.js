@@ -1,6 +1,7 @@
 import React from 'react';
 import './UserProfile.css';
 import UserNavbar from './OrgNavbar';
+import Footer from './Footer';
 
 const UserProfile = () => {
   // Replace the placeholder image URL with the actual image URL
@@ -22,6 +23,7 @@ const UserProfile = () => {
         <p>Address: 123 Main Street, Cityville</p>
       </div>
     </div>
+    <Footer/>
     </>
   );
 };

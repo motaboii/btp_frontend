@@ -1,6 +1,7 @@
 import React from 'react';
 import './fullpolicy.css';
 import UserNavbar from './OrgNavbar';
+import Footer from './Footer';
 
 const FullPolicy = () => {
   return (
@@ -10,7 +11,7 @@ const FullPolicy = () => {
     <div className="full-policy-container">
       <div className="policy-image">
         {/* Replace the placeholder image with the actual image URL */}
-        <img src="https://via.placeholder.com/300" alt="Policy" />
+        <img src="https://p1.hiclipart.com/preview/183/446/356/person-logo-user-computer-system-administrator-user-profile-computer-software-computer-monitors-symbol-png-clipart-thumbnail.jpg" alt="Policy" />
       </div>
       <div className="policy-details">
         <h2>Policy Name:</h2>
@@ -26,6 +27,7 @@ const FullPolicy = () => {
         </p>
       </div>
     </div>
+    <Footer/>
     </>
   );
 };

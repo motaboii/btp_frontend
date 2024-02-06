@@ -22,6 +22,12 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     ;
   }
+
+  .create-policy-container
+  {
+    margin-left: 450px;
+
+  }
   
   label {
     font-size: 1rem;
@@ -50,7 +56,7 @@
     padding: 1rem;
     border: none;
     background: #3498db;
-    color: #fff;
+    color: #43a5b7;
     border-radius: 5px;
     cursor: pointer;
   }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './CreatePolicy.css';
 import OrgNavbar from './OrgNavbar';
+import Footer from './Footer';
 
 const CreatePolicy = () => {
   const [formData, setFormData] = useState({
@@ -39,7 +40,9 @@ const CreatePolicy = () => {
 
 <OrgNavbar/>
     <div className="create-policy-container">
-      <h2>Create Policy</h2>
+    <br/>
+    <h2 style={{ fontWeight: 'bold' ,marginLeft:'50px'}}>Create Policy</h2>
+
       <form onSubmit={handleSubmit}>
         <div className="form-group2">
           <label htmlFor="companyName">Company Name:</label>
@@ -86,6 +89,12 @@ const CreatePolicy = () => {
         </div>
       ))}
     </div>
+    <br/>
+    
+    <br/>
+    
+    <br/>
+    <Footer/>
     </>
   );
 };

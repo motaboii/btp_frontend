@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './DashBoard.css'
 import UserNavbar from './UserNavbar';
+import Footer from './Footer';
 
 const policiesData = [
   {
@@ -62,6 +63,11 @@ const Policies = () => {
         ))}
       </div>
     </div>
+    
+    <br/>
+    <br/>
+    <br/>
+    <Footer/>
     </>
   );
 };
