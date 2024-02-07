@@ -94,10 +94,10 @@ export default function ThreeTierPricing() {
               </ListItem>
             </List>
             <Box w="80%" pt={7}>
-              <Button w="full" colorScheme="green" variant="outline">
-                Get Started
-              </Button>
-            </Box>
+                <Button w="full" colorScheme="green">
+                  Get Started
+                </Button>
+              </Box>
           </VStack>
         </PriceWrapper>
 
@@ -214,10 +214,10 @@ export default function ThreeTierPricing() {
               </ListItem>
             </List>
             <Box w="80%" pt={7}>
-              <Button w="full" colorScheme="green" variant="outline">
-                Get Started
-              </Button>
-            </Box>
+                <Button w="full" colorScheme="green">
+                  Get Started
+                </Button>
+              </Box>
           </VStack>
         </PriceWrapper>
       </Stack>
