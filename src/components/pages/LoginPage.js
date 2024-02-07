@@ -1,69 +1,81 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
-import MainNavbar from './MainNavbar'
-import "./LoginPage.css";
-import Footer from "./Footer";
+import {
+  Flex,
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  Checkbox,
+  Stack,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { useAuth } from "../context/AuthContext";
+
+
 
 export default function SignInPage() {
-  const url = "https://misty-ray-threads.cyclic.app/api/v1/auth/login";
-  const navigate = useNavigate();
 
-  const login = async (e) => {
-    e.preventDefault();
-    try {
-      const email = document.querySelector("#email").value;
-      const password = document.querySelector("#Password").value;
-      const { data } = await axios.post(url, { email, password });
-      console.log(data);
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("scmName", data.user.name);
-      localStorage.setItem("scmRole", data.user.role);
-      navigate("/home");
-    } catch (error) {
-      localStorage.removeItem("token");
-      alert(error.response.data.msg);
-
-      document.querySelector("#email").value = "";
-    }
-  };
+  const { login,email,setEmail,password,setPassword,isLoading,setIsLoading } = useAuth();
 
   return (
-    <>
-      <MainNavbar/>
-   
-    <div className="text-center m-5-auto">
-      <h2>Sign in to us</h2>
-      <form>
-        <p>
-          <label>Username or email address</label>
-          <br />
-          <input id="email" type="text" name="first_name" required />
-        </p>
-        <p>
-          <label>Password</label>
-          <Link to="/forget-password">
-            <label className="right-label">Forget password?</label>
-          </Link>
-          <br />
-          <input id="Password" type="password" name="password" required />
-        </p>
-        <p>
-          <button onClick={(e) => login(e)} id="sub_btn">
-            Login
-          </button>
-        </p>
-      </form>
-      <footer>
-        <p>
-          First time? <Link to="/register">Create an account</Link>.
-        </p>
-        <p>
-          <Link to="/">Back to Homepage</Link>.
-        </p>
-      </footer>
-    </div>
-    <Footer/>
-    </>
+    <Flex
+      minH={"100vh"}
+      align={"center"}
+      justify={"center"}
+      bg={useColorModeValue("gray.50", "gray.800")}
+    >
+      <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+        <Stack align={"center"}>
+          <Heading fontSize={"4xl"}>Sign in to your account</Heading>
+        </Stack>
+        <Box
+          rounded={"lg"}
+          bg={useColorModeValue("white", "gray.700")}
+          boxShadow={"lg"}
+          p={8}
+        >
+          <Stack spacing={4}>
+            <FormControl id="email">
+              <FormLabel>Email address</FormLabel>
+              <Input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </FormControl>
+            <FormControl id="password">
+              <FormLabel>Password</FormLabel>
+              <Input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </FormControl>
+            <Stack spacing={10}>
+              <Stack
+                direction={{ base: "column", sm: "row" }}
+                align={"start"}
+                justify={"space-between"}
+              >
+                <Checkbox>Remember me</Checkbox>
+                <Text color={"blue.400"}>Forgot password?</Text>
+              </Stack>
+              <Button
+                isLoading={isLoading}
+                loadingText="Signing in"
+                colorScheme="green"
+                onClick={login}
+              >
+                Sign in
+              </Button>
+            </Stack>
+          </Stack>
+        </Box>
+      </Stack>
+    </Flex>
   );
 }

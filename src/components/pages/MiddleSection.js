@@ -1,7 +1,7 @@
 // MiddleSection.js
 
 import React from 'react';
-import './MiddleSection.css'; // Import CSS for styling
+// import './MiddleSection.css'; // Import CSS for styling
 
 const MiddleSection = () => {
   return (

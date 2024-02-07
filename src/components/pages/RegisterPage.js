@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MainNavbar from './MainNavbar'
 import "./RegisterPage.css";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 export default function SignUpPage() {
   const url = "https://misty-ray-threads.cyclic.app/api/v1/auth/register";
   const [message, setMessage] = useState("");
@@ -41,7 +41,7 @@ export default function SignUpPage() {
 
   return (
     <>
-  <MainNavbar/>
+  {/* <MainNavbar/> */}
 
     <div className="text-center m-5-auto">
       <h2>Join us</h2>
@@ -88,7 +88,7 @@ export default function SignUpPage() {
         </p>
       </footer>
     </div>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   );
 }

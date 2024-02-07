@@ -1,5 +1,5 @@
 import React from 'react';
-import './UserProfile.css';
+// import './UserProfile.css';
 import UserNavbar from './OrgNavbar';
 import Footer from './Footer';
 
